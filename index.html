@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <title>Convertoria</title>
+    
+    <meta name="description" content="Convertoria - Free online unit converter. Convert length, weight, temperature, area, volume, speed, time, and data instantly.">
+    <meta name="keywords" content="convertoria, unit converter, length converter, weight converter, temperature converter, free converter">
+    <meta name="author" content="Lemuel Owusu-Ansah">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Convertoria - Unit Converter">
+    <meta property="og:description" content="Convert any unit instantly. Free online unit converter.">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Convertoria - Unit Converter">
+    <meta name="twitter:description" content="Convert any unit instantly.">
+    
+    <link rel="canonical" href="https://your-domain.com/convertoria">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔢</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔢</text></svg>">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <div class="bg-glow"></div>
+        <div class="bg-grid"></div>
+
+        <header class="app-header">
+            <div class="brand-badge">
+                <span class="brand-icon">🔢</span>
+                <span class="brand-name">CONVERTORIA</span>
+                <span class="brand-sparkle">✨</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline-secondary btn-sm rounded-circle theme-toggle" id="themeToggle">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="converter-card glass">
+                <div class="card-header-custom">
+                    <h1 class="app-title">Unit Converter</h1>
+                    <p class="app-subtitle">Convert between any units instantly</p>
+                </div>
+
+                <div class="converter-body">
+                    <!-- Category Selector -->
+                    <div class="category-selector">
+                        <label class="input-label">📐 Select Category</label>
+                        <select id="categorySelect" class="form-select form-select-lg"></select>
+                    </div>
+
+                    <!-- Conversion Area -->
+                    <div class="conversion-area">
+                        <div class="input-group-custom">
+                            <label class="input-label">From</label>
+                            <div class="input-row">
+                                <input type="number" id="fromValue" class="form-control form-control-lg" placeholder="Enter value" step="any" value="1">
+                                <select id="fromUnit" class="form-select form-select-lg"></select>
+                            </div>
+                        </div>
+
+                        <div class="swap-section">
+                            <button id="swapBtn" class="btn-swap">
+                                <i class="bi bi-arrow-down-up"></i>
+                            </button>
+                        </div>
+
+                        <div class="input-group-custom">
+                            <label class="input-label">To</label>
+                            <div class="input-row">
+                                <input type="text" id="toValue" class="form-control form-control-lg" readonly placeholder="Result">
+                                <select id="toUnit" class="form-select form-select-lg"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-row">
+                        <button id="copyBtn" class="btn-action">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                        <button id="clearBtn" class="btn-action">
+                            <i class="bi bi-trash3"></i> Clear
+                        </button>
+                        <button id="clearHistoryBtn" class="btn-action">
+                            <i class="bi bi-clock-history"></i> Clear History
+                        </button>
+                    </div>
+
+                    <!-- Quick Convert Suggestions -->
+                    <div class="quick-convert">
+                        <span class="quick-label">⚡ Quick:</span>
+                        <button class="quick-btn" data-value="1">1</button>
+                        <button class="quick-btn" data-value="10">10</button>
+                        <button class="quick-btn" data-value="100">100</button>
+                        <button class="quick-btn" data-value="1000">1000</button>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="history-section">
+                    <div class="history-header">
+                        <span class="history-title"><i class="bi bi-clock-history"></i> History</span>
+                        <span id="historyCount" class="history-count">0 entries</span>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <div class="empty-history">No conversions yet</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <span>Convertoria · Apps by Lemuel Owusu-Ansah</span>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/converter.js"></script>
+</body>
+</html>
